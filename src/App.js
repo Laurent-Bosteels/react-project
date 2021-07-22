@@ -1,27 +1,27 @@
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import './App.css';
 
 function App() {
+
+  // creating the state
+  // setCocktails is going update it
+  
+  const [cocktails, setCocktails] = useState([]);
+
+  useEffect(() => {
+    axios
+    .get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+    .then(res => {
+      setCocktails(res.data);
+      console.log(res.data);
+    })
+    .catch(error => console.log(error))
+  }, []);
+
   return (
     <div className="App">
       <h1>API</h1>
-
-      <ul className="space-y-2">
-  <li>
-    <ul className="grid grid-cols-10 h-7">
-      <li className="bg-red-50"></li>
-      <li className="bg-red-100"></li>
-      <li className="bg-red-200"></li>
-      <li className="bg-red-300"></li>
-      <li className="bg-red-400"></li>
-      <li className="bg-red-500"></li>
-      <li className="bg-red-600"></li>
-      <li className="bg-red-700"></li>
-      <li className="bg-red-800"></li>
-      <li className="bg-red-900"></li>
-    </ul>
-  </li>
-  </ul>
-
     </div>
   );
 }
