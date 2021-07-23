@@ -1,3 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body {
+  background-color: #f9f3ff;
+}
+
+.container-fluid {
+  padding: 15px 15px 15px 15px
+}
+
+.cocktail-grid {
+  padding: 30px 30px 30px 30px;
+}
+
+.badge {
+  background: blue;
+}
